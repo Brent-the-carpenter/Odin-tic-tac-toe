@@ -116,15 +116,18 @@ const Game = (() => {
             displayController.renderMessage(`${players[currentPlayerIndex].name} Won!`);
                 if (players[currentPlayerIndex].mark === 'X'){
                      player1Score++
+                     currentPlayerIndex = 1;
                      displayController.showModal();
                     displayController.renderScoreBoard(`${players[0].name}'s score is ${player1Score}`, `${players[1].name}'s score is ${player2Score}`);
                 }else if (players[currentPlayerIndex].mark === "O"){ 
                     player2Score++
+                    currentPlayerIndex = 1;
                     displayController.showModal();
                     displayController.renderScoreBoard(`${players[0].name}'s score is ${player1Score}`, `${players[1].name}'s score is ${player2Score}`)
                 }
         }else if (checkForTie(Gameboard.getGameboard())){
             gameOver = true;
+            currentPlayerIndex = 1;
             displayController.showModal();
             displayController.renderMessage(`Its a Tie!`);
            
