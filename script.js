@@ -121,7 +121,7 @@ const Game = (() => {
                 }else if (players[currentPlayerIndex].mark === "O"){ 
                     player2Score++
                     displayController.showModal();
-                    displayController.renderScoreBoard(`${players[1].name}'s score is ${player1Score}`, `${players[0].name}'s score is ${player2Score}`)
+                    displayController.renderScoreBoard(`${players[0].name}'s score is ${player1Score}`, `${players[1].name}'s score is ${player2Score}`)
                 }
         }else if (checkForTie(Gameboard.getGameboard())){
             gameOver = true;
